@@ -13,8 +13,8 @@ public class LoginPage {
     WebDriver driver;
     By email_txtfield= By.id("email");
     By password_txtfield=By.id("password");
-    By login_btn = By.xpath("/html/body/app-root/div/app-checkout/aw-wizard/div/aw-wizard-step[2]/app-login/div/div/div/div/form/div[3]/input");
-   By proceedCheckout_btn=By.xpath("/html/body/app-root/div/app-checkout/aw-wizard/div/aw-wizard-step[2]/app-login/div/div/div/div");
+    By login_btn = By.xpath("/html/body/app-root/div/app-login/div/div/div/form/div[3]/input");
+   By home_lnk=By.xpath("//*[@id=\"navbarSupportedContent\"]/ul/li[1]/a");
     public LoginPage(WebDriver driver){
         this.driver=driver;
     }
@@ -34,27 +34,23 @@ public class LoginPage {
         driver.findElement(login_btn).click();
     }
     public void  VarifyLoginDone(String redirector){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        // استنى لحد ما الـ URL يبقى هو المطلوب
+        wait.until(ExpectedConditions.urlToBe(redirector));
 
         Assert.assertEquals(driver.getCurrentUrl(),redirector);
     }
-    public void Click_ProceedCheckout(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-
-        // استنى لحد ما الزر يبقى ظاهر في الصفحة
-        WebElement proceedBtn = wait.until(
-                ExpectedConditions.visibilityOfElementLocated(proceedCheckout_btn)
-        );
-
-        // بعد ما بقى ظاهر، استنى كمان يبقى clickable
-        wait.until(ExpectedConditions.elementToBeClickable(proceedBtn));
-
-        // اضغط على الزر
-        proceedBtn.click();
-        System.out.println("Button is Clicked");
-
-        //driver.findElement(proceedCheckout_btn).click();
+    public void Click_HomePage(){
+    driver.findElement(home_lnk).click();
     }
-    public void  VarifyClick_ProceedCheckout(String redirector){
+    public void  VarifyClick_Home(String redirector){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        // استنى لحد ما الـ URL يبقى هو المطلوب
+        wait.until(ExpectedConditions.urlToBe(redirector));
+
+
         Assert.assertEquals(driver.getCurrentUrl(),redirector);
     }
 

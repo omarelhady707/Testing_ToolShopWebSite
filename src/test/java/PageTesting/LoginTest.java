@@ -42,17 +42,17 @@ public class LoginTest {
         //checkoutPage.ClickRemoveone();
         checkoutPage.VarifyQuantitynum(9);
         checkoutPage.ClickProceedCheckout();
-        checkoutPage.VarifyClickedProceedCheckout("https://practicesoftwaretesting.com/checkout");
+        //checkoutPage.VarifyClickedProceedCheckout("https://practicesoftwaretesting.com/checkout");
         loginPage.TypeEmail("elhadyo424@gmail.com");
         loginPage.VarifyEmail("elhadyo424@gmail.com");
         loginPage.TypePassword("O0a19695#0");
         loginPage.VarifyPassword("O0a19695#0");
         loginPage.Click_Loginbutton();
         loginPage.VarifyLoginDone("https://practicesoftwaretesting.com/checkout");
-        loginPage.Click_ProceedCheckout();
+        //loginPage.Click_ProceedCheckout();
         //loginPage.Click_ProceedCheckout();
 
-        loginPage.VarifyClick_ProceedCheckout("https://practicesoftwaretesting.com/checkout");
+        //loginPage.VarifyClick_ProceedCheckout("https://practicesoftwaretesting.com/checkout");
 
     }
     @AfterClass

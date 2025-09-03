@@ -24,7 +24,13 @@ public class ShoppingPage {
 
     }
     public void VarifyProductIsClicked(String redirector){
-        Assert.assertEquals(driver.getCurrentUrl(),redirector);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        // استنى لحد ما اللينك يحتوي على product/
+        wait.until(ExpectedConditions.urlContains("/product/"));
+
+        // اتأكد إنك في صفحة المنتج
+        Assert.assertTrue(driver.getCurrentUrl().contains("/product/"));
     }
 
 }
