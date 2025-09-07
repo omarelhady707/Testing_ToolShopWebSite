@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 
-public class RegistreTest {
+public class FinalTest {
     WebDriver driver;
     ShoppingPage shoppingPage;
     CheckoutPage checkoutPage;
@@ -33,12 +33,12 @@ public class RegistreTest {
     @DataProvider(name = "checkoutData")
     public Object[][] getCheckoutData() {
         return new Object[][]{
-                {"Omarr", "Elhady", "2000-12-12", "Street1", "Street2", "12345", "Cairo", "CairoState", "EG", "0111111111", "omar@teest.com", "Pass1231223#",
-                        "01K45BMRWX7E1RNGFK90KZQ7FV", 3, // Product ID + quantity
+                {"Omarr", "Elhady", "2000-12-12", "Street1", "Street2", "12345", "Cairo", "CairoState", "EG", "0111111111", "omawer@teest.com", "Pass1231223#",
+                        "01K4J0RQFWC093DY3XCMPAPNYR", 3, // Product ID + quantity
                         "credit-card", "1111-2222-3333-4444", "11/2030", "123", "Omar Card"},
 
-                {"Ali", "Mostafa", "1998-05-10", "StreetX", "StreetY", "54321", "Alex", "AlexState", "EG", "0122222222", "ali@teest.com", "AliPass#123323",
-                        "01K472JJ6CX9VEWZM8HHMA1RCT", 2,
+                {"Ali", "Mostafa", "1998-05-10", "StreetX", "StreetY", "54321", "Alex", "AlexState", "EG", "0122222222", "awlqi@teest.com", "AliPass#123323",
+                        "01K4J0RQFWC093DY3XCMPAPNYR", 2,
                         "credit-card", "5555-6666-7777-8888", "10/2029", "456", "Ali Holder"}
         };
     }
