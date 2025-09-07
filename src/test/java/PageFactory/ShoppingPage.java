@@ -15,14 +15,15 @@ public class ShoppingPage {
     public ShoppingPage(WebDriver driver){
         this.driver=driver;
     }
-    public void ClickAtProduct(){
+    public void ClickAtProduct(String productXpath){
        // driver.findElement(product_btn).click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement product = wait.until(ExpectedConditions
-                .elementToBeClickable(By.xpath("//h5[normalize-space()='Combination Pliers']/ancestor::a")));
+                .elementToBeClickable(By.xpath(productXpath)));
         product.click();
 
     }
+    /*
     public void VarifyProductIsClicked(String redirector){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
@@ -31,6 +32,14 @@ public class ShoppingPage {
 
         // اتأكد إنك في صفحة المنتج
         Assert.assertTrue(driver.getCurrentUrl().contains("/product/"));
+    }
+     */
+    public void VarifyProductIsClicked(String expectedName) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement productTitle = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[@data-test='product-name']"))
+        );
+        Assert.assertEquals(productTitle.getText(), expectedName);
     }
 
 }

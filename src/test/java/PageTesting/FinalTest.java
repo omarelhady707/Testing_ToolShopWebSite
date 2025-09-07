@@ -33,12 +33,12 @@ public class FinalTest {
     @DataProvider(name = "checkoutData")
     public Object[][] getCheckoutData() {
         return new Object[][]{
-                {"Omarr", "Elhady", "2000-12-12", "Street1", "Street2", "12345", "Cairo", "CairoState", "EG", "0111111111", "omawer@teest.com", "Pass1231223#",
-                        "01K4J0RQFWC093DY3XCMPAPNYR", 3, // Product ID + quantity
+                {"Omarr", "Elhady", "2000-12-12", "Street1", "Street2", "12345", "Cairo", "CairoState", "EG", "0111111111", "ommajwjekr@teest.com", "Pass1231223#",
+                        "//h5[normalize-space()='Combination Pliers']/ancestor::a","Combination Pliers", 3, // Product ID + quantity
                         "credit-card", "1111-2222-3333-4444", "11/2030", "123", "Omar Card"},
 
-                {"Ali", "Mostafa", "1998-05-10", "StreetX", "StreetY", "54321", "Alex", "AlexState", "EG", "0122222222", "awlqi@teest.com", "AliPass#123323",
-                        "01K4J0RQFWC093DY3XCMPAPNYR", 2,
+                {"Ali", "Mostafa", "1998-05-10", "StreetX", "StreetY", "54321", "Alex", "AlexState", "EG", "0122222222", "awlqjjmki@teest.com", "AliPass#123323",
+                       "/html/body/app-root/div/app-overview/div[3]/div[2]/div[1]/a[6]", "Claw Hammer with Shock Reduction Grip", 2,
                         "credit-card", "5555-6666-7777-8888", "10/2029", "456", "Ali Holder"}
         };
     }
@@ -47,7 +47,7 @@ public class FinalTest {
     public void PositiveScenarioAddProduct(
             String firstName, String lastName, String dob, String street1, String street2,
             String postalCode, String city, String state, String country, String phone,
-            String email, String password, String productId, int qty,
+            String email, String password,String productXpath ,String productId, int qty,
             String paymentMethod, String cardNum, String expDate, String cvv, String holder
     ) {
         // 1. Register
@@ -78,8 +78,8 @@ public class FinalTest {
         loginPage.VarifyClick_Home("https://practicesoftwaretesting.com/");
 
         // 3. Select Product
-        shoppingPage.ClickAtProduct(); // ممكن تعملها ديناميك بالproductId لو حابب
-        shoppingPage.VarifyProductIsClicked("https://practicesoftwaretesting.com/product/" + productId);
+        shoppingPage.ClickAtProduct(productXpath); // ممكن تعملها ديناميك بالproductId لو حابب
+        shoppingPage.VarifyProductIsClicked(productId);
         product.TypeAmount(qty);
         product.VarifyAmount(qty);
         product.ClickAddToCart();

@@ -17,7 +17,7 @@ public class ShoppingTestPage {
     }
     @Test
     public void PositiveSenarioShoppingPage(){
-        shoppingPage.ClickAtProduct();
+       // shoppingPage.ClickAtProduct();
         shoppingPage.VarifyProductIsClicked("https://practicesoftwaretesting.com/product/01K4282QMBQHFW963HTDYY9QNA");
     }
     @AfterClass

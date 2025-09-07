@@ -25,7 +25,7 @@ public class CheckoutTest {
     }
     @Test
     public void PositiveSenarioAddProduct(){
-        shoppingPage.ClickAtProduct();
+        //shoppingPage.ClickAtProduct();
         shoppingPage.VarifyProductIsClicked("https://practicesoftwaretesting.com/product/01K449A44ES4HC703BN44GGE3N");
         product.TypeAmount(5);
         product.VarifyAmount(5);

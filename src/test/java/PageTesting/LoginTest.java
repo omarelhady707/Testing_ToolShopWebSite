@@ -28,7 +28,7 @@ public class LoginTest {
     }
     @Test
     public void PositiveSenarioAddProduct(){
-        shoppingPage.ClickAtProduct();
+        //shoppingPage.ClickAtProduct();
         shoppingPage.VarifyProductIsClicked("https://practicesoftwaretesting.com/product/01K44CQZN8HN4S6NC16DDFM1ES");
         product.TypeAmount(5);
         product.VarifyAmount(5);

@@ -78,7 +78,7 @@ public class RegistreTest {
         loginPage.VarifyClick_Home("https://practicesoftwaretesting.com/");
 
         // 3. Select Product
-        shoppingPage.ClickAtProduct(); // ممكن تعملها ديناميك بالproductId لو حابب
+        //shoppingPage.ClickAtProduct(); // ممكن تعملها ديناميك بالproductId لو حابب
         shoppingPage.VarifyProductIsClicked("https://practicesoftwaretesting.com/product/" + productId);
         product.TypeAmount(qty);
         product.VarifyAmount(qty);
