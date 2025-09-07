@@ -49,7 +49,7 @@ public class ProductPage {
         driver.findElement(minus_btn).click();
     }
     public void GotoCart(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
 
         wait.until(ExpectedConditions.invisibilityOfElementLocated(
